@@ -68,6 +68,8 @@ const Conversation = () => {
     const { socket } = useChat();
     const messages = useMessages();
     const chatConversation = useRef(null);
+
+    console.log(messages)
     
     // auto scroll to bottom on new message recieve / sent
     useEffect(() => {

@@ -28,23 +28,22 @@ const ChatForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
+      
+        const message = inputRef.current.value; 
+        console.log('Message to be sent:', message); 
+        sendMessage(message, currentRoom.id, userName);
 
-        sendMessage(
-            inputRef.current.value, 
-            currentRoom.id, 
-            userName
-        );
-        
         inputRef.current.value = '';
         inputRef.current.focus();
-    }
+      };
+      
 
     return (
         <MessageForm onSubmit={ onSubmit }>
             <input type="text" placeholder='Type a message here' ref={ inputRef }/>
             
             <ButtonContainer flex="0" padding="0" active={ true } size="2.2em" borderRadius="50%">
-                <button>
+                <button onClick={onSubmit}>
                     <IoIosSend fill='#fff'/>
                 </button>
             </ButtonContainer>
