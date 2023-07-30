@@ -30,7 +30,7 @@ const ChatForm = () => {
         e.preventDefault();
       
         const message = inputRef.current.value; 
-        console.log('Message to be sent:', message); 
+        // console.log('Message to be sent:', message); 
         sendMessage(message, currentRoom.id, userName);
 
         inputRef.current.value = '';
